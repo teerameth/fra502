@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="rover">
+
+    <link name="root">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="2.0"/>
+        <inertia ixx="0.69333" ixy="0" ixz="0" iyy="0.69333" iyz="0" izz="0.00213"/>
+      </inertial>
+      <visual name="Cube">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="2.0 2.0 0.4"/>
+        </geometry>
+        <material name="Green"/>
+      </visual>
+    </link>
+
+    <link name="wheel_back_left">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.5"/>
+        <inertia ixx="0.00411" ixy="0" ixz="0" iyy="0.00781" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="Cylinder.002">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.5" length="0.2"/>
+        </geometry>
+        <material name="RED"/>
+      </visual>
+    </link>
+
+    <link name="wheel_back_right">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.5"/>
+        <inertia ixx="0.00411" ixy="0" ixz="0" iyy="0.00781" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="Cylinder.001">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.5" length="0.2"/>
+        </geometry>
+        <material name="RED"/>
+      </visual>
+    </link>
+
+    <link name="wheel_front_left">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.5"/>
+        <inertia ixx="0.00411" ixy="0" ixz="0" iyy="0.00781" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="Cylinder.000">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.5" length="0.2"/>
+        </geometry>
+        <material name="RED"/>
+      </visual>
+    </link>
+
+    <link name="wheel_front_right">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.5"/>
+        <inertia ixx="0.00411" ixy="0" ixz="0" iyy="0.00781" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="Cylinder.003">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.5" length="0.2"/>
+        </geometry>
+        <material name="RED"/>
+      </visual>
+    </link>
+
+    <joint name="wheel_back_left" type="continuous">
+      <origin xyz="0.9 -1.2 0" rpy="1.5708 0 0"/>
+      <parent link="root"/>
+      <child link="wheel_back_left"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="2.4" velocity="1.0"/>
+    </joint>
+
+    <joint name="wheel_back_right" type="continuous">
+      <origin xyz="0.9 1.2 0" rpy="1.5708 0 0"/>
+      <parent link="root"/>
+      <child link="wheel_back_right"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="1.0" velocity="2.4"/>
+    </joint>
+
+    <joint name="wheel_front_left" type="continuous">
+      <origin xyz="-0.6 -1.2 0" rpy="1.5708 0 0"/>
+      <parent link="root"/>
+      <child link="wheel_front_left"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="2.4" velocity="1.0"/>
+    </joint>
+
+    <joint name="wheel_front_right" type="continuous">
+      <origin xyz="-0.6 1.2 0" rpy="1.5708 0 0"/>
+      <parent link="root"/>
+      <child link="wheel_front_right"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="2.4" velocity="1.0"/>
+    </joint>
+
+    <material name="Green">
+      <color rgba="0.02552 0.35173 0.00685 1.0"/>
+    </material>
+
+    <material name="RED">
+      <color rgba="0.8 0 0 1.0"/>
+    </material>
+
+  </robot>
