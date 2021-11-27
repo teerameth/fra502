@@ -21,8 +21,8 @@ def generate_launch_description():
     # robot_desc = robot_description_config.toxml()
     # print(robot_desc)
 
-    urdf_file_name = 'tratsah.urdf'
-    # urdf_file_name = 'rover.urdf'
+    # urdf_file_name = 'tratsah.urdf'
+    urdf_file_name = 'omni_tratsah.urdf'
 
     print("urdf_file_name : {}".format(urdf_file_name))
     
